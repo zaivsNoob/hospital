@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <h1>Doctors</h1>
+        <ul>
+            <% for(stu of Doctor){ %>
+               <li><h4>
+                   Name:<%= stu.name%> 
+               </h4>
+                   <span> Qualification:<%=stu.qualification%> </span>
+                   <span>DoctorId:<%=stu.docId%> </span>
+                   <span>Fees:<%=stu.fees%> </span>
+                   
+            </li>
+               <% }%>
+        
+        
+        </ul>
+    </div>
+
+    <h1>Appoinments</h1>
+
+    <div>
+        <ul>
+            <% for(stu of Appointment){ %>
+               <li><span>Name:<%= stu.patient%></span>
+                <span>problem:<%=stu.problem%> </span>
+                <span>DocId:<%=stu.docId%> </span>
+                    
+            </li>
+               <% }%>
+        
+        
+        </ul>
+    </div>
+
+
+    <form action="/bill" method="POST">
+        <input type="text" placeholder="Patient Name" name="patient" required>
+        <input type="text" placeholder="Doctor Name" name="doctor">
+        <input type="text" placeholder="Bill" name="bill">
+        <input type="text" placeholder="Status" name="status">
+        
+     
+       
+        <button type="submit">Submit</button>
+       
+        
+        
+    </form>
+</body>
+</html>

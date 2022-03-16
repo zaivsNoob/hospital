@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <% for(stu of Doctor){ %>
+               <li><h4>
+                   Name:<%= stu.name%> 
+               </h4>
+                   <span> Qualification:<%=stu.qualification%> </span>
+                   <span>DoctorId:<%=stu.docId%> </span>
+                   <span>Fees:<%=stu.fees%> </span>
+                   
+            </li>
+               <% }%>
+        
+        
+        </ul>
+    </div>
+
+    <form action="/doctor-list" method="POST">
+        <input type="text" placeholder="Patient" name="patient">
+        <input type="text" placeholder="Problem" name="problem">
+        <input type="text" placeholder="Previous record" name="previous">
+        <input type="text" placeholder="Doctor Id" name="docId">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
